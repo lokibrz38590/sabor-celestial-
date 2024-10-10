@@ -1,0 +1,224 @@
+<html><head><base href="https://saborcelestial.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabor Celestial - Brigadeiros e Beijinhos Divinos</title>
+<style>
+  :root {
+    --rosa-claro: #ffd1dc;
+    --rosa-escuro: #ff69b4;
+    --ciano-claro: #e0ffff;
+    --ciano-escuro: #00ced1;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--rosa-claro);
+    color: #4a4a4a;
+  }
+  header {
+    background-color: var(--ciano-escuro);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--rosa-claro);
+  }
+  nav {
+    background-color: var(--rosa-escuro);
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 1em;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: var(--ciano-claro);
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+  }
+  .produto {
+    background-color: var(--ciano-claro);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .produto:hover {
+    transform: translateY(-5px);
+  }
+  .produto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .produto-info {
+    padding: 1em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    background-color: var(--ciano-escuro);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+  }
+  @keyframes flutuacao {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  .logo {
+    animation: flutuacao 3s ease-in-out infinite;
+  }
+  h2 {
+    color: var(--ciano-escuro);
+    border-bottom: 2px solid var(--rosa-escuro);
+    padding-bottom: 0.5em;
+  }
+  .produto h3 {
+    color: var(--rosa-escuro);
+  }
+  .grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+  }
+  .btn {
+    background-color: var(--rosa-escuro);
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: auto;
+  }
+  .btn:hover {
+    background-color: var(--ciano-escuro);
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .produto {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-play-state: paused;
+  }
+  .produto.visible {
+    animation-play-state: running;
+  }
+  .preco {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--rosa-escuro);
+    margin: 0.5em 0;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <svg class="logo" width="100" height="100" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#ff69b4"/>
+      <text x="50" y="60" font-size="20" text-anchor="middle" fill="#fff">Sabor<tspan x="50" y="80">Celestial</tspan></text>
+    </svg>
+    <h1>Sabor Celestial</h1>
+    <p>Brigadeiros e Beijinhos que são uma verdadeira experiência divina!</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#produtos">Nossos Produtos</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section id="sobre">
+      <h2>Sobre o Sabor Celestial</h2>
+      <p>Bem-vindo ao Sabor Celestial, onde cada brigadeiro e beijinho é feito com amor e ingredientes de alta qualidade. Nossa missão é trazer um pedacinho do céu para o seu paladar!</p>
+      <p>Fundada em 2020, nossa loja nasceu do amor pela confeitaria brasileira e do desejo de compartilhar sabores incríveis com nossos clientes. Cada doce é preparado artesanalmente, garantindo o máximo de sabor e qualidade.</p>
+    </section>
+    
+    <section id="produtos">
+      <h2>Nossos Produtos</h2>
+      <div class="grid-produtos">
+        <div class="produto">
+          <img src="https://images.unsplash.com/photo-1629343892580-1702fafdd5c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Brigadeiro tradicional, coberto com granulado de chocolate, em um recipiente de papel dourado" width="400" height="300">
+          <div class="produto-info">
+            <h3>Brigadeiro Tradicional</h3>
+            <p>Nosso clássico brigadeiro, feito com chocolate premium e coberto com granulado. Uma explosão de sabor que derrete na boca.</p>
+            <p class="preco">R$ 10,00 cada</p>
+            <a href="/produto/brigadeiro" class="btn">Saiba mais</a>
+          </div>
+        </div>
+        <div class="produto">
+          <img src="https://images.unsplash.com/photo-1597856544688-54f2fc5ed959?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Beijinho de coco branco e cremoso, decorado com coco ralado, em um recipiente de papel dourado" width="400" height="300">
+          <div class="produto-info">
+            <h3>Beijinho de Coco</h3>
+            <p>Delicioso beijinho feito com coco fresco e leite condensado de qualidade. Uma doçura irresistível que encanta a todos.</p>
+            <p class="preco">R$ 10,00 cada</p>
+            <a href="/produto/beijinho" class="btn">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Sabor Celestial. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const produtos = document.querySelectorAll('.produto');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      produtos.forEach(produto => {
+        observer.observe(produto);
+      });
+    });
+  </script>
+</body>
+</html>
